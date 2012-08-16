@@ -1,0 +1,22 @@
+%% personal config for misc. symbols
+%% C. Garion, 2012
+%%
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{my-symbols}[2012/08/16 v0.1 
+                 LaTeX package for symbols configuration]
+
+\RequirePackage{pifont}
+\newcommand{\fleche}{\ding{229}}
+
+\newcommand\parframe[3]{%
+\parbox{#1}{#2}
+\setbox0=\lastbox
+\setbox0=\hbox{\unhbox0 \unskip\unskip}
+\dimen0=\dimexpr\linewidth-\wd0\relax
+\parbox{\dimen0}{#3}
+}
+\newcommand\parfleche[1]{%
+\parbox[t]{2em}{\hspace{1em}\fleche}
+\dimen0=\dimexpr\linewidth-3em\relax
+\parbox[t]{\dimen0}{#1}
+}
