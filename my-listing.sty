@@ -1,0 +1,15 @@
+%% personal config for listings
+%% C. Garion, 2012
+%%
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{my-listings}[2012/08/16 v0.1 
+                 LaTeX package for listings configuration]
+
+% packages
+\RequirePackage{listings}
+\RequirePackage[scaled]{luximono}
+
+% commands and def
+\newcommand{\src}[1]{\lstinline!#1!}
+
+\lstset{extendedchars=true, basicstyle=\footnotesize\ttfamily, commentstyle=\itshape, showstringspaces=false} 
