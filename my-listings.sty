@@ -10,6 +10,6 @@
 \RequirePackage[scaled]{luximono}
 
 % commands and def
-\newcommand{\src}[1]{\lstinline!#1!}
+\newcommand{\src}[1]{\bgroup\lstset{basicstyle=\ttfamily}\lstinline!#1!\egroup}
 
 \lstset{extendedchars=true, basicstyle=\footnotesize\ttfamily, commentstyle=\itshape, showstringspaces=false} 
