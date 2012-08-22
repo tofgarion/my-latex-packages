@@ -12,7 +12,8 @@
 % commands and def
 \newcommand{\src}[1]{\lstinline!#1!}
 \newcommand{\srcsm}[1]{\bgroup\lstset{basicstyle=\footnotesize\ttfamily}\lstinline!#1!\egroup}
-\newcommand{\lstinputlistingsm}[1]{\lstinputlisting[basicstyle=\footnotesize\ttfamily]{#1}}
+
+\newcommand{\lstinputlistingsm}[2][]{\lstinputlisting[basicstyle=\footnotesize\ttfamily,#1]{#2}}
 
 \lstnewenvironment{lstlistingsm} 
                   {\lstset{basicstyle=\footnotesize\ttfamily}}
