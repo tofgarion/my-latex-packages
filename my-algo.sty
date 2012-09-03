@@ -1,0 +1,18 @@
+%% personal config for algorithms
+%% C. Garion, 2012
+%%
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{my-algo}[2012/08/16 v0.1 
+                 LaTeX package for algorithm2e configuration]
+
+% packages
+\iflanguage{french}{%
+\RequirePackage[french,algoruled,lined,linesnumbered,algosection]{algorithm2e}
+\renewcommand{\algocf@typo}{}
+\SetKwInput{Entree}{entr\'ee}
+\SetKwInput{Entrees}{entr\'ees}
+\SetKwInput{Sortie}{sortie}
+\SetKwInput{Sorties}{sorties}
+}{%
+\RequirePackage[algoruled,lined,linesnumbered,algosection]{algorithm2e}
+}%
