@@ -12,6 +12,7 @@ install:	init
 init: 	$(LOCAL_TEXMF)/tex/latex/my-latex-packages
 	@echo "copying files"
 	cp *.sty $(LOCAL_TEXMF)/tex/latex/my-latex-packages
+	cp *.tex $(LOCAL_TEXMF)/tex/latex/my-latex-packages
 
 $(LOCAL_TEXMF)/tex/latex/my-latex-packages:	
 	@echo "creating $(LOCAL_TEXMF)/tex/latex/my-latex-packages"
