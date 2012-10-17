@@ -35,8 +35,10 @@
 \lstdefinelanguage[JML+JUnit]{Java}[]{Java}%
        {% C++ style comments have to start with a blank!
         comment=[l]{//\ },
-        % And C-style comments must also start with a blank!
+        % C-style comments must also start with a blank!
         morecomment=[s]{/*\ }{*/},
+        % And javadoc-style comments must also start with a blank!
+        morecomment=[s]{/**\ }{*/},
         % sensitive=true, % inherited
         % Add JML keywords as level 1 keywords, so can typeset differently
         classoffset=1,
