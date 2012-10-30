@@ -17,6 +17,27 @@
 
 \input{jml-junit-listings}
 
+% appearance
+\RequirePackage{xcolor}
+\RequirePackage{caption}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white,
+  singlelinecheck=false, margin=0pt, font={bf}}
+
+\colorlet{isae@bggray}{gray!20}
+
+% styles
+\lstdefinestyle{numbers}
+   {numbers=left,xleftmargin=17pt,numbersep=5pt}
+\lstdefinestyle{nonumbers}
+   {numbers=none,xleftmargin=5pt}
+\lstdefinestyle{inline}
+   {backgroundcolor=\color{isae@bggray}}
+\lstdefinestyle{inline+numbers}
+   {backgroundcolor=\color{isae@bggray},numbers=left,numbersep=10pt}
+
 % commands and def
 \newcommand{\src}[1]{\lstinline!#1!}
 \newcommand{\srcsm}[1]{\bgroup\lstset{basicstyle=\footnotesize\ttfamily}\lstinline!#1!\egroup}
