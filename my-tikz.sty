@@ -42,6 +42,15 @@
   ;
 }
 
+% environements
+\newenvironment{umltikzpicture}[1][]{%
+\begin{microtypecontext}{kerning=uml}%
+\begin{tikzpicture}[#1]%
+}{%
+\end{tikzpicture}%
+\end{microtypecontext}%
+}%
+
 % Slightly modified from
 % http://tex.stackexchange.com/questions/17898/how-can-i-produce-a-ring-or-wheel-chart-like-that-on-page-88-of-the-pgf-manua
 % New command for a wheel chart
