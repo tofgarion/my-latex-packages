@@ -42,12 +42,20 @@
   ;
 }
 
-% environements
+% environments
 \newenvironment{umltikzpicture}[1][]{%
 \begin{microtypecontext}{kerning=uml}%
 \begin{tikzpicture}[#1]%
 }{%
 \end{tikzpicture}%
+\end{microtypecontext}%
+}%
+
+\newenvironment{umlsequencediagram}[1][]{%
+\begin{microtypecontext}{kerning=uml}%
+\begin{sequencediagram}[#1]%
+}{%
+\end{sequencediagram}%
 \end{microtypecontext}%
 }%
 
