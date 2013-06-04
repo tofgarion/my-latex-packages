@@ -26,7 +26,8 @@
 
 \RequirePackage{wasysym}
 
-\RequirePackage[normalem]{ulem}
+\@ifpackageloaded{ulem}{}{\RequirePackage[normalem]{ulem}}
+
 \def\dotuline{\bgroup
   \ifdim\ULdepth=\maxdimen  % Set depth based on font, if not set already
   \settodepth\ULdepth{(j}\advance\ULdepth.4pt\fi
