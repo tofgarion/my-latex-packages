@@ -158,6 +158,28 @@
       \draw[gray] (0,0) circle (\outerradius) circle (\innerradius);
 }
 
+% for important env.
+\usepackage{mdframed}
+\usepackage{manfnt}
+\newenvironment{important}[1][]{%
+  \begin{minipage}[h]{0.1\linewidth}
+    \begin{tikzpicture}
+      \draw[line width=2pt, rounded corners=2pt,color=red] (0,0) --
+      ++(0.7,-1) -- ++(-1.4,0) -- cycle;
+
+      \fill[line width=2pt,rounded corners=2pt] (-0.075,-0.25) --
+      ++(0.075,-0.5) -- ++(0.1,0.5) -- cycle;
+      \fill (0,-0.85) circle[radius=2pt] ;
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}[h]{0.90\linewidth}
+   \begin{mdframed}[%
+      backgroundcolor={red!15}, hidealllines=true,
+      skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
+      splitbottomskip=2pt, splittopskip=4pt, #1]%    
+
+}{\end{mdframed}\end{minipage}}
+
 % for beamer overlays
 \tikzset{onslide/.code args={<#1>#2}{%
   \only<#1>{\pgfkeysalso{#2}} 
