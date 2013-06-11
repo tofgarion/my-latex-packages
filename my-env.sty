@@ -1,0 +1,45 @@
+%% personal config for some environments
+%% C. Garion, 2012
+%%
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{my-env}[2013/06/11 v0.1 
+                 LaTeX package for TikZ configuration]
+
+% for important env.
+\RequirePackage{tikz}
+\RequirePackage{mdframed}
+\newenvironment{important}[1][]{%
+  \vskip 1em
+  \begin{minipage}[b]{0.125\linewidth}
+    \begin{tikzpicture}[baseline={([yshift={-0.25\ht\strutbox}]current bounding box.north)}]
+      \draw[line width=2pt, rounded corners=2pt,color=red] (0,0) --
+      ++(0.7,-1) -- ++(-1.4,0) -- cycle;
+
+      \fill[line width=2pt,rounded corners=2pt] (-0.075,-0.25) --
+      ++(0.075,-0.5) -- ++(0.1,0.5) -- cycle;
+      \fill (0,-0.85) circle[radius=2pt] ;
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}[t]{0.875\linewidth}
+   \begin{mdframed}[%
+      backgroundcolor={red!15}, topline=false, bottomline=false, rightline=false,
+      skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
+      splitbottomskip=2pt, splittopskip=4pt, #1]%    
+
+}{\end{mdframed}\end{minipage}\vskip 1em}
+
+% for tools
+\RequirePackage{graphicx}
+\newenvironment{tools}[1][]{%
+  \vskip 1em
+  \begin{minipage}[t]{0.125\linewidth}
+    \vspace{0pt}
+      \includegraphics[width=0.85\linewidth]{liftarn_Tools.png}
+  \end{minipage}
+  \begin{minipage}[t]{0.875\linewidth}
+   \begin{mdframed}[%
+      backgroundcolor={gray!15}, topline=false, bottomline=false, rightline=false,
+      skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
+      splitbottomskip=2pt, splittopskip=4pt, #1]%    
+
+}{\end{mdframed}\end{minipage}\vskip 1em}
