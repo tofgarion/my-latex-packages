@@ -32,6 +32,13 @@
 % If you want, you could make a version that is a style file,
 % but then change \lstdefinelanguage to \lst@definelanguage below.
 %
+\lstdefinelanguage[JUnit]{Java}[]{Java}{%
+        classoffset=2,
+        morekeywords={@Before,@After,@Test,@Suite,@RunWith,@Parameters,
+        @DataPoint,@DataPoints,@Theory},
+        classoffset=0 % restore default class for keywords
+}
+
 \lstdefinelanguage[JML+JUnit]{Java}[]{Java}%
        {% C++ style comments have to start with a blank!
         comment=[l]{//\ },
