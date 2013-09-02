@@ -9,6 +9,9 @@
 \RequirePackage{listings}
 \RequirePackage[scaled=0.85]{luximono}
 
+% new key for line number + first line
+\lst@Key{firstlinenum}\relax{\def\lst@firstline{#1\relax}\def\lst@firstnumber{#1\relax}}
+
 % languages definitions
 \lstdefinelanguage{svn}{
   morekeywords={checkout,commit,diff,log,
