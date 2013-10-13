@@ -2,7 +2,7 @@
 %% C. Garion, 2012
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesPackage{my-theorems}[2012/08/16 v0.1 
+\ProvidesPackage{my-theorems}[2012/08/16 v0.1
                  LaTeX package for theorems configuration]
 
 % packages
@@ -22,5 +22,7 @@
 \deftranslation[to=French]{Exercise}{Exercice}
 \newtheorem*{hypothesis}{\translate{Hypothesis}}
 \deftranslation[to=French]{Hypothesis}{Hypoth\`ese}
-%\newtheorem*{definition}{\translate{Definition}}
-%\deftranslation[to=French]{Definition}{D\'efinition}
+\@ifclassloaded{beamer}{}{
+  \newtheorem*{definition}{\translate{Definition}}
+  \deftranslation[to=French]{Definition}{D\'efinition}
+}
