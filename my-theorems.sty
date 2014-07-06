@@ -23,6 +23,8 @@
 \newtheorem*{hypothesis}{\translate{Hypothesis}}
 \deftranslation[to=French]{Hypothesis}{Hypoth\`ese}
 \@ifclassloaded{beamer}{}{
-  \newtheorem*{definition}{\translate{Definition}}
-  \deftranslation[to=French]{Definition}{D\'efinition}
+  \@ifpackageloaded{beamerarticle}{}{
+    \newtheorem*{definition}{\translate{Definition}}
+    \deftranslation[to=French]{Definition}{D\'efinition}
+  }
 }
