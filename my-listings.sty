@@ -2,7 +2,7 @@
 %% C. Garion, 2012
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesPackage{my-listings}[2012/08/16 v0.1 
+\ProvidesPackage{my-listings}[2012/08/16 v0.1
                  LaTeX package for listings configuration]
 
 % packages
@@ -21,6 +21,11 @@
 
 \lstdefinelanguage{fh}{
   morekeywords={if,then,else,fi,while,do,od,;,:=}
+}
+
+\lstdefinelanguage{mybash}{
+  morekeywords={top, man, info, which, cp, ls, mkdir, mv, chmod,
+    ssh, scp, rsync, export, ps, pwd, cd, nice, nohup, kill, fg, bg},
 }
 
 \input{jml-junit-listings}
@@ -52,8 +57,8 @@
 
 \newcommand{\lstinputlistingsm}[2][]{\lstinputlisting[basicstyle=\footnotesize\ttfamily,#1]{#2}}
 
-\lstnewenvironment{lstlistingsm} 
+\lstnewenvironment{lstlistingsm}
                   {\lstset{basicstyle=\footnotesize\ttfamily}}
                   {}
 
-\lstset{extendedchars=true, basicstyle=\ttfamily, commentstyle=\itshape, showstringspaces=false} 
+\lstset{extendedchars=true, basicstyle=\ttfamily, commentstyle=\itshape, showstringspaces=false}
