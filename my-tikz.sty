@@ -2,7 +2,7 @@
 %% C. Garion, 2012
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesPackage{my-tikz}[2012/08/15 v0.1 
+\ProvidesPackage{my-tikz}[2012/08/15 v0.1
                  LaTeX package for TikZ configuration]
 
 % packages and TikZ librairies
@@ -25,6 +25,14 @@
   \tikzstyle{every attribute}=[draw=violet!50,fill=violet!20,thick]
   \tikzstyle{weakentity}=[entity, double distance=2pt]
   \tikzstyle{weakrelationship}=[relationship, double distance=2pt]
+
+  \newcommand{\entite}[4]{\node[entity] (##1) at (##2,##3) {##4};}
+  \newcommand{\entitefaible}[4]{\node[entity,double distance=2pt] (##1)
+    at (##2,##3) {##4};}
+  \newcommand{\asso}[4]{\node[relationship] (##1) at (##2,##3) {##4};}
+  \newcommand{\assofaible}[4]{\node[relationship,double distance=2pt] (##1) at (##2,##3) {##4};}
+  \newcommand{\attribut}[3]{\node [below of=##1, node distance=(\baselineskip * (##2 + 1)), anchor=west] {##3};}
+  \newcommand{\finattribut}[2]{\node (##1final) [below of=##1, node distance=(\baselineskip * (##2 + 2))] {}; \draw (##1) -- (##1final);}
 }
 
 \newcommand*\keystroke[1]{%
@@ -160,5 +168,5 @@
 
 % for beamer overlays
 \tikzset{onslide/.code args={<#1>#2}{%
-  \only<#1>{\pgfkeysalso{#2}} 
+  \only<#1>{\pgfkeysalso{#2}}
 }}
