@@ -124,8 +124,8 @@
 
 \newcommand{\lstinputlistingsm}[2][]{\lstinputlisting[basicstyle=\footnotesize\ttfamily,#1]{#2}}
 
-\lstnewenvironment{lstlistingsm}
-                  {\lstset{basicstyle=\footnotesize\ttfamily}}
+\lstnewenvironment{lstlistingsm}[1][]
+                  {\lstset{basicstyle=\footnotesize\ttfamily,#1}}
                   {}
 
 \lstset{extendedchars=true, basicstyle=\ttfamily, commentstyle=\itshape, showstringspaces=false}
