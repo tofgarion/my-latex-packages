@@ -75,11 +75,13 @@
     }%
     \bt@inrange%
 }
+
 \newcommand\bt@getrangeb{%
     \@ifnextchar\relax%
         {\bt@rangeb=\bt@rangea}%
         {\@getrangeb}%
 }
+
 \def\@getrangeb-#1\relax{%
     \ifx\relax#1\relax%
         \bt@rangeb=100000%   \maxdimen is too large for pgfmath
@@ -88,7 +90,7 @@
     \fi%
 }
 
-\newcommand<>{\btLstHL}[1]{%
+\newcommand<>{\highlight}[1]{%
   \only#2{\btIfInRange{\value{lstnumber}}{#1}{\color{\lstbackgroundcolor}\def\lst@linebgrdcmd{\color@block}}{\def\lst@linebgrdcmd####1####2####3{}}}%
 }%
 \makeatother
