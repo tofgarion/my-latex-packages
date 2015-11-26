@@ -2,7 +2,7 @@
 %% C. Garion, 2012
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesPackage{my-env}[2013/06/11 v0.1 
+\ProvidesPackage{my-env}[2013/06/11 v0.1
                  LaTeX package for TikZ configuration]
 
 % for important env.
@@ -24,7 +24,7 @@
    \begin{mdframed}[%
       backgroundcolor={red!15}, topline=false, bottomline=false, rightline=false,
       skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
-      splitbottomskip=2pt, splittopskip=4pt, #1]%    
+      splitbottomskip=2pt, splittopskip=4pt, #1]%
 
 }{\end{mdframed}\end{minipage}\vskip 1em}
 
@@ -40,6 +40,35 @@
    \begin{mdframed}[%
       backgroundcolor={gray!15}, topline=false, bottomline=false, rightline=false,
       skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
-      splitbottomskip=2pt, splittopskip=4pt, #1]%    
+      splitbottomskip=2pt, splittopskip=4pt, #1]%
+
+}{\end{mdframed}\end{minipage}\vskip 1em}
+
+% reminder
+\newenvironment{reminder}[1][]{%
+  \vskip 1em
+  \begin{minipage}[t]{0.125\linewidth}
+    \vspace{0pt}
+      \includegraphics[width=0.85\linewidth]{reminder.png}
+  \end{minipage}
+  \begin{minipage}[t]{0.875\linewidth}
+   \begin{mdframed}[%
+      backgroundcolor={yellow!15}, topline=false, bottomline=false, rightline=false,
+      skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
+      splitbottomskip=2pt, splittopskip=4pt, #1]%
+
+}{\end{mdframed}\end{minipage}\vskip 1em}
+
+\newenvironment{remindersm}[1][]{%
+  \vskip 1em
+  \begin{minipage}[t]{0.06\linewidth}
+    \vspace{0pt}
+      \includegraphics[width=0.6\linewidth]{reminder.png}
+  \end{minipage}
+  \begin{minipage}[t]{0.9\linewidth}
+   \begin{mdframed}[%
+      backgroundcolor={yellow!15}, topline=false, bottomline=false, rightline=false,
+      skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
+      splitbottomskip=2pt, splittopskip=4pt, #1]%
 
 }{\end{mdframed}\end{minipage}\vskip 1em}
