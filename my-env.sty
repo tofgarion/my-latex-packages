@@ -72,3 +72,11 @@
       splitbottomskip=2pt, splittopskip=4pt, #1]%
 
 }{\end{mdframed}\end{minipage}\vskip 1em}
+
+% adding stars in margin
+\usepackage{forloop}
+\usepackage{marginnote}
+\newcounter{starcounter}
+\newcommand{\stardif}[1]{%
+\marginnote{($\forloop{starcounter}{0}{\value{starcounter} < #1}{\star})$}
+}%
