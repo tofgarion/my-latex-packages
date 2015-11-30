@@ -131,3 +131,19 @@
                   {}
 
 \lstset{extendedchars=true, basicstyle=\ttfamily, commentstyle=\itshape, showstringspaces=false}
+
+\newcommand{\lstusecolors}{
+\lstset{backgroundcolor=\color{gray!10}}
+
+\definecolor{lstred}{rgb}{0.6,0,0}
+\definecolor{lstgreen}{rgb}{0.25,0.5,0.35}
+\definecolor{lstpurple}{rgb}{0.5,0,0.35}
+\definecolor{lstblue}{rgb}{0.25,0.35,0.75}
+
+\lstset{
+        keywordstyle=\color{lstpurple}\bfseries,
+        stringstyle=\color{lstred},
+        commentstyle=\color{lstgreen},
+        identifierstyle=\color{lstblue}
+}
+}
