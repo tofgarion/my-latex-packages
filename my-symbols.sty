@@ -2,7 +2,7 @@
 %% C. Garion, 2012
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesPackage{my-symbols}[2012/08/16 v0.1 
+\ProvidesPackage{my-symbols}[2012/08/16 v0.1
                  LaTeX package for symbols configuration]
 
 \RequirePackage{amssymb}
@@ -12,6 +12,10 @@
 \newcommand{\fleche}{\ding{229}}
 \newcommand\mycheck{\textcolor{green!60!black}{\ding{52}}}
 \newcommand\mynocheck{\textcolor{red!60!black}{\ding{56}}}
+
+\RequirePackage{stackengine}
+\newcommand\myboxcheck{\stackinset{c}{-0.25ex}{b}{}{$\Box$}{\mycheck}}
+\newcommand\myboxnocheck{\stackinset{c}{}{b}{}{$\Box$}{\mynocheck}}
 
 \newcommand\parframe[3]{%
 \parbox{#1}{#2}
