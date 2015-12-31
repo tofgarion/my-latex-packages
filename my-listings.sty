@@ -53,6 +53,10 @@
     Function, out}
 }
 
+\lstdefinelanguage{ADT}{
+  morekeywords={sorts, operations, equations}
+}
+
 \input{jml-junit-listings}
 
 % use lstlinebgrd package for background
@@ -124,6 +128,8 @@
    {backgroundcolor=\color{isae@bggray}}
 \lstdefinestyle{inline+numbers}
    {backgroundcolor=\color{isae@bggray},numbers=left,numbersep=10pt}
+\lstdefinestyle{adt}
+   {mathescape=true,language=ADT}
 
 % commands and def
 \newcommand{\src}[1]{\lstinline!#1!}
@@ -133,6 +139,10 @@
 
 \lstnewenvironment{lstlistingsm}[1][]
                   {\lstset{basicstyle=\footnotesize\ttfamily,#1}}
+                  {}
+
+\lstnewenvironment{adt}[1][]
+                  {\lstset{mathescape=true,language=ADT,#1}}
                   {}
 
 \lstset{extendedchars=true, basicstyle=\ttfamily, commentstyle=\itshape, showstringspaces=false}
