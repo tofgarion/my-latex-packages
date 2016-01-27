@@ -17,6 +17,11 @@
 \newcommand\myboxcheck{\stackinset{c}{-0.25ex}{b}{}{$\Box$}{\mycheck}}
 \newcommand\myboxnocheck{\stackinset{c}{}{b}{}{$\Box$}{\mynocheck}}
 
+\@ifclassloaded{beamer}{
+\newcommand\mycheckquizz[2]{\onslide*<all:#1>{$\Box$} \onslide*<all:#2 |handout:0>{\myboxcheck{}}}
+\newcommand\mynocheckquizz[2]{\onslide*<all:#1>{$\Box$} \onslide*<all:#2 |handout:0>{\myboxnocheck{}}}
+}{}
+
 \newcommand\parframe[3]{%
 \parbox{#1}{#2}
 \setbox0=\lastbox
