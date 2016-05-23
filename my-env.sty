@@ -80,3 +80,8 @@
 \newcommand{\stardif}[1]{%
 \marginnote{($\forloop{starcounter}{0}{\value{starcounter} < #1}{{\star}})$}
 }%
+
+% set marks if not already defined
+\newcommand{\setmark}[2]{%
+  \ifundef{#1}{\def#1{#2}}{}%
+}
