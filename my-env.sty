@@ -85,3 +85,34 @@
 \newcommand{\setmark}[2]{%
   \ifundef{#1}{\def#1{#2}}{}%
 }
+
+% draw CS arrays
+\newcounter{nodeidx}
+\setcounter{nodeidx}{0}
+
+\newif\ifcontinuearray
+
+\pgfkeys{
+  /myarray/.is family,
+  /myarray,
+  default/.style={
+    sep distance = 0,
+    array number = 0,
+  },
+  continue/.initial = false,
+  sep distance/.estore in=\sepDistance,
+  array number/.estore in=\arrayNum,
+  continue/.is if=continuearray
+}
+
+\newcommand{\nodes}[2][]{%
+  \pgfkeys{/myarray, default, #1}%
+  \begin{scope}[\ifcontinuearray continue \else start \fi chain=my-array-temp-{\arrayNum} going right, node
+    distance=\sepDistance]
+    \foreach \num in {#2}{
+      \node[minimum size=2em, draw, rectangle, on
+      chain=my-array-temp-{\arrayNum}] (nodearray-\arrayNum-\arabic{nodeidx}) {\num};
+      \stepcounter{nodeidx}
+    }
+  \end{scope}
+}
