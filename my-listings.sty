@@ -5,9 +5,16 @@
 \ProvidesPackage{my-listings}[2015/11/16 v0.1
                  LaTeX package for listings configuration]
 
+% LuaLaTeX
+\RequirePackage{ifluatex}
+
 % packages
 \RequirePackage{listings}
+\ifluatex
+\relax
+\else
 \RequirePackage[scaled=0.85]{beramono}
+\fi
 
 % new key for line number + first line
 \lst@Key{firstlinenum}\relax{\def\lst@firstline{#1\relax}\def\lst@firstnumber{#1\relax}}
