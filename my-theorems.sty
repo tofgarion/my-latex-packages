@@ -32,3 +32,10 @@
     \deftranslation[to=French]{Definition}{D\'efinition}
   }
 }
+
+% better theorems
+\usepackage[theorems]{tcolorbox}
+
+\newtcbtheorem[number within=section]{codeconv}{\translate{Code conventions}}%
+{colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
+\deftranslation[to=French]{Code conventions}{Conventions de codage}
