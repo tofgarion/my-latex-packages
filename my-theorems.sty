@@ -8,34 +8,46 @@
 % packages
 \RequirePackage{amsthm}
 
-% new theorems
-\theoremstyle{definition}
-\newtheorem*{myrule}{\translate{Rule}}
+% translator
+\RequirePackage{translator}
+
 \deftranslation[to=French]{Rule}{R\`egle}
-\newtheorem*{principle}{\translate{Principle}}
 \deftranslation[to=French]{Principle}{Principe}
-\newtheorem*{property}{\translate{Property}}
 \deftranslation[to=French]{Property}{Propri\'et\'e}
-\newtheorem*{syntax}{\translate{Syntax}}
 \deftranslation[to=French]{Syntax}{Syntaxe}
-\newtheorem*{nb}{\translate{N.B.}}
 \deftranslation[to=French]{N.B.}{Remarque}
-\newtheorem*{exercise}{\translate{Exercise}}
 \deftranslation[to=French]{Exercise}{Exercice}
-\newtheorem*{hypothesis}{\translate{Hypothesis}}
 \deftranslation[to=French]{Hypothesis}{Hypoth\`ese}
-\newtheorem*{codeconvention}{\translate{Code convention}}
 \deftranslation[to=French]{Code convention}{Convention de codage}
-\@ifclassloaded{beamer}{}{
-  \@ifpackageloaded{beamerarticle}{}{
-    \newtheorem*{definition}{\translate{Definition}}
-    \deftranslation[to=French]{Definition}{D\'efinition}
-  }
+
+% new theorems
+% check if beamer is loaded
+\ifclassloaded{beamer}{
+  \theoremstyle{definition}
+  \newtheorem*{myrule}{\translate{Rule}}
+  \newtheorem*{principle}{\translate{Principle}}
+  \newtheorem*{property}{\translate{Property}}
+  \newtheorem*{syntax}{\translate{Syntax}}
+  \newtheorem*{nb}{\translate{N.B.}}
+  \newtheorem*{exercise}{\translate{Exercise}}
+  \newtheorem*{hypothesis}{\translate{Hypothesis}}
+  \newtheorem*{codeconvention}{\translate{Code convention}}
+}{
+  \RequirePackage[theorems]{tcolorbox}
+  \newtcbtheorem[number within=section]{myrule}{\translate{Rule}}%
+  {colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
+  \newtcbtheorem[number within=section]{principle}{\translate{Principle}}%
+  {colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
+  \newtcbtheorem[number within=section]{property}{\translate{Property}}%
+  {colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
+  \newtcbtheorem[number within=section]{syntax}{\translate{Syntax}}%
+  {colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
+  \newtcbtheorem[number within=section]{nb}{\translate{N.B.}}%
+  {colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
+  \newtcbtheorem[number within=section]{exercise}{\translate{Exercise}}%
+  {colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
+  \newtcbtheorem[number within=section]{hypothesis}{\translate{Hypothesis}}%
+  {colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
+  \newtcbtheorem[number within=section]{codeconv}{\translate{Code conventions}}%
+  {colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
 }
-
-% better theorems
-\RequirePackage[theorems]{tcolorbox}
-
-\newtcbtheorem[number within=section]{codeconv}{\translate{Code conventions}}%
-{colback=gray!10,colframe=gray!80,fonttitle=\bfseries}{th}
-\deftranslation[to=French]{Code conventions}{Conventions de codage}
