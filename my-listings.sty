@@ -57,11 +57,17 @@
 
 \lstdefinelanguage{algo}{
   morekeywords={:=, end, if, then, else, while, do, for, until,
-    Function, Procedure, out}
+    Function, Procedure, out},
+  keywordstyle=\color{black}\bfseries,
+  stringstyle=\color{black},
+  commentstyle=\color{black},
+  identifierstyle=\color{black},
+  mathescape=true
 }
 
 \lstdefinelanguage{ADT}{
-  morekeywords={sorts, operations, equations, preconditions}
+  morekeywords={sorts, operations, equations, preconditions},
+  mathescape=true
 }
 
 \input{jml-junit-listings}
