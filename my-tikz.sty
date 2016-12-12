@@ -180,3 +180,39 @@
     \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
   }
 }
+
+% draw CS arrays
+\usetikzlibrary{intersections}
+\newcounter{nodeidx}
+\setcounter{nodeidx}{0}
+
+\newif\ifcontinuearray
+
+\pgfkeys{
+  /myarray/.is family,
+  /myarray,
+  default/.style={
+    sep distance = 0,
+    array number = 0,
+  },
+  continue/.initial = false,
+  sep distance/.estore in=\sepDistance,
+  array number/.estore in=\arrayNum,
+  continue/.is if=continuearray
+}
+
+\newcommand{\nodes}[2][]{%
+  \pgfkeys{/myarray, default, #1}%
+  \begin{scope}[\ifcontinuearray continue \else start \fi chain=my-array-temp-{\arrayNum} going right, node
+    distance=\sepDistance]
+    \foreach \num in {#2}{
+      \node[minimum size=2em, draw, on
+      chain=my-array-temp-{\arrayNum}] (nodearray-\arrayNum-\arabic{nodeidx}) {\num};
+      \stepcounter{nodeidx}
+    }
+  \end{scope}
+}
+
+\newcommand{\brckt}[4]{% from, to, lvl, text
+  \draw (nodearray-#1.south west) ++($(-.1, -.1) + (-.1*#3, 0)$) -- ++($(0,-.1) + (0,-#3*1.25em)$) -- node [below] {#4} ($(nodearray-#2.south east) + (.1,-.1) + (.1*#3, 0) + (0,-.1) + (0,-#3*1.25em)$) -- ++($(0,#3*1.25em) + (0,.1)$);%
+}
