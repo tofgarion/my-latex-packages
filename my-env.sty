@@ -89,6 +89,21 @@
 
 }{\end{mdframed}\end{minipage}\vskip 1em}
 
+% policy of style
+\newenvironment{convention}[1][]{%
+  \vskip 1em
+  \begin{minipage}[t]{0.125\linewidth}
+    \vspace{0pt}
+      \includegraphics[width=0.6\linewidth]{policeman.png}
+  \end{minipage}
+  \begin{minipage}[t]{0.875\linewidth}
+   \begin{mdframed}[%
+      backgroundcolor={blue!10}, topline=false, bottomline=false, rightline=false,
+      skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
+      splitbottomskip=2pt, splittopskip=4pt, #1]%
+
+}{\end{mdframed}\end{minipage}\vskip 1em}
+
 % adding stars in margin
 \usepackage{forloop}
 \usepackage{marginnote}
