@@ -128,9 +128,26 @@
 \usepackage{forloop}
 \usepackage{marginnote}
 \newcounter{starcounter}
-\newcommand{\stardif}[1]{%
-\marginnote{($\forloop{starcounter}{0}{\value{starcounter} < #1}{{\star}})$}
+\newcommand{\stardif}[2][black]{%
+\marginnote{\textcolor{#1}{($\forloop{starcounter}{0}{\value{starcounter} < #2}{\star}$)}}
 }%
+
+\def\mygreensol{black!30!green}
+
+\newcommand{\stardifsol}[1]{
+  \ifdef{\sol}{
+    \stardif[\mygreensol]{#1}
+    \undef{\sol}
+  }{
+    \stardif{#1}
+  }
+}
+
+\newcommand{\sstardif}[2][black]{%
+  \textcolor{#1}{$\forloop{starcounter}{0}{\value{starcounter} < #2}{\star}$}
+}%
+
+\newcommand{\sstardifsol}[1]{\sstardif[\mygreensol]{#1}}
 
 % set marks if not already defined
 \newcommand{\setmark}[2]{%
