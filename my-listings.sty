@@ -24,8 +24,16 @@
 \RequirePackage[scaled=0.85]{beramono}
 \fi
 
+% pb with vertical space before lstlisting, cf.
+% https://tex.stackexchange.com/questions/461673/regression-in-spacing-before-lstlisting-environment-with-version-2018-09-02-afte
+\makeatletter
+\lst@AddToHook{PreSet}{\let\leavevmode\relax}
+\makeatother
+
 % new key for line number + first line
+\makeatletter
 \lst@Key{firstlinenum}\relax{\def\lst@firstline{#1\relax}\def\lst@firstnumber{#1\relax}}
+\makeatother
 
 % languages definitions
 \lstdefinelanguage{svn}{
