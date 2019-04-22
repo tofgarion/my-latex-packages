@@ -134,14 +134,11 @@
 
 \def\mygreensol{black!30!green}
 
-\newcommand{\stardifsol}[1]{
-  \ifdef{\sol}{
-    \stardif[\mygreensol]{#1}
-    \undef{\sol}
-  }{
-    \stardif{#1}
-  }
-}
+\newcommand{\stardifsol}[1]{%
+  \ifdef{\sol}{%
+    \stardif[\mygreensol]{#1}%\undef{\sol}%
+  }{\stardif{#1}}%
+}%
 
 \newcommand{\sstardif}[2][black]{%
   \textcolor{#1}{$\forloop{starcounter}{0}{\value{starcounter} < #2}{\star}$}
