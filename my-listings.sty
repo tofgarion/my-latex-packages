@@ -6,11 +6,9 @@
                  LaTeX package for listings configuration]
 
 % options
-\def\@colorlst{}
-\DeclareOption{colors}{
-  \def\@colorlst{true}
-}
+\newif\if@lstcolors \@lstcolorstrue
 
+\DeclareOption{nocolors}{\@lstcolorsfalse}
 \ProcessOptions\relax
 
 % LuaLaTeX
@@ -238,17 +236,24 @@
       }
 }
 
-\ifx@colorlst\@empty
-\relax
-\else
+% \if@lstcolors
+% \makeatletter
+% \@ifclassloaded{beamer}{%
+%   \mode<presentation>{\lstusecolors}%
+%   \ifx\slideshandout\undefined\mode<handout>{\lstusecolorshandouts}\else\relax\fi%
+% }{%
+% \lstusecolors%
+% }%
+% \makeatother
+% \else%
+% \lstusecolors%
+% \fi
+% \fi
+
 \makeatletter
-\@ifclassloaded{beamer}{%
-  \mode<presentation>{\lstusecolors}%
-  \ifx\slideshandout\undefined\mode<handout>{\lstusecolorshandouts}\else\relax\fi%
-}{%
+\if@lstcolors
 \lstusecolors%
-}%
-\makeatother
 \fi
+\makeatother
 
 \endinput
